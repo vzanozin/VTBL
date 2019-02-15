@@ -1,0 +1,315 @@
+
+LNK ->lnk.sql
+==========================
+
+create table LNK.LNK_EVENTS
+                 *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+
+Grant succeeded.
+
+
+LNK ->fill_lnk.sql
+==========================
+
+
+ETL ->CTL_CHECK_NEW_XML_MCRM_FILES.sql
+==========================
+
+
+View created.
+
+
+ETL ->fill_ctl_actual_file_type.sql
+==========================
+
+Importing table etl.ctl_actual_file_types...
+
+1 row deleted.
+
+
+1 row created.
+
+Done.
+
+ETL -> fill_REF_STG_SCHEMA_SOURCE_NAME.sql
+==========================
+
+
+0 rows merged.
+
+
+STG ->add_modify_obj_stg.sql
+==========================
+
+drop table STG_XML_CRM.G$EVENTS purge
+                       *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+drop table STG_XML_CRM.GS$CRM_EVENTS purge
+                       *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+Table dropped.
+
+
+Table created.
+
+
+STG ->STG_XML_CRM.V_EVENTS.sql
+==========================
+
+
+View created.
+
+
+DWH -> add_obj_dwh.sql
+==========================
+
+create table DWH.EVENTS
+                 *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object 
+
+
+
+DWH -> fill_etl_metadata.sql
+==========================
+
+Importing table etl.t_table...
+  add constraint PK#T_TABLE primary key (TABLE_ID)
+                            *
+ERROR at line 2:
+ORA-02260: table can have only one primary key 
+
+
+
+1 row deleted.
+
+
+1 row created.
+
+
+Commit complete.
+
+
+1 row deleted.
+
+
+1 row created.
+
+
+Commit complete.
+
+
+1 row deleted.
+
+
+1 row created.
+
+Done.
+
+DWH -> add_modify_obj.sql
+==========================
+
+
+Table altered.
+
+
+Table altered.
+
+alter table DWH.EVENTS modify lease_term NUMBER
+                              *
+ERROR at line 1:
+ORA-54031: column to be dropped or modified is used in a virtual column 
+expression 
+
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+alter table DWH.EVENTS add w_rate as (OFFER_RATE * CONVERT_RATE * FULLCOST_AMT - PREPAY_AMT)
+                           *
+ERROR at line 1:
+ORA-01430: column being added already exists in table 
+
+
+alter table DWH.EVENTS add w_advance  as (PREPAY_RATE * FULLCOST_AMT * CONVERT_RATE)
+                           *
+ERROR at line 1:
+ORA-01430: column being added already exists in table 
+
+
+alter table DWH.EVENTS add w_agent_fee_amt as (FULLCOST_AMT * AGENT_FEE_RATE * CONVERT_RATE)
+                           *
+ERROR at line 1:
+ORA-01430: column being added already exists in table 
+
+
+alter table DWH.EVENTS add w_commission_amt as (FINANCE_AMT * COMISSION_RATE * CONVERT_RATE - PREPAY_AMT)
+                           *
+ERROR at line 1:
+ORA-01430: column being added already exists in table 
+
+
+alter table DWH.EVENTS add w_lease_term as (FINANCE_AMT * LEASE_TERM * CONVERT_RATE - PREPAY_AMT)
+                           *
+ERROR at line 1:
+ORA-01430: column being added already exists in table 
+
+
+alter table DWH.EVENTS add w_reduce_step as (FINANCE_AMT * REDUCE_STEP * CONVERT_RATE - PREPAY_AMT)
+                           *
+ERROR at line 1:
+ORA-01430: column being added already exists in table 
+
+

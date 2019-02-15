@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DocumentElement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="events">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="EVENT" type="xs:string" />
+              <xs:element minOccurs="0" name="EVENT_NUM" type="xs:unsignedInt" />
+              <xs:element name="CRM_SUBJECT_CD" type="xs:string" />
+              <xs:element name="CRM_CONTRACT_ID_CD" type="xs:string" />
+              <xs:element minOccurs="0" name="STAGE" type="xs:string" />
+              <xs:element minOccurs="0" name="LEASING_SUBJECT_NAM" type="xs:string" />
+              <xs:element minOccurs="0" name="LEASING_SUBJECT_NUM" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="PRE_CONTRACT_ID_CD" type="xs:string" />
+              <xs:element minOccurs="0" name="MANAGER_NAM" type="xs:string" />
+              <xs:element minOccurs="0" name="BUSINESS_UNIT_NAM" type="xs:string" />
+              <xs:element minOccurs="0" name="APPEAL_SOURCE" type="xs:string" />
+              <xs:element minOccurs="0" name="TASK_SUBJECT" type="xs:string" />
+              <xs:element minOccurs="0" name="TASK_BEGIN_DT" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="TASK_HISTORY" type="xs:string" />
+              <xs:element minOccurs="0" name="BREND_NAM" type="xs:string" />
+              <xs:element minOccurs="0" name="MODEL_NAM" type="xs:string" />
+              <xs:element minOccurs="0" name="BREND_MODEL_NAM" type="xs:string" />
+              <xs:element name="CAR_TYPE_NAM" type="xs:string" />
+              <xs:element minOccurs="0" name="VEHICLE_CATEGORY_NAM" type="xs:string" />
+              <xs:element minOccurs="0" name="USED_FLG" type="xs:boolean" />
+              <xs:element minOccurs="0" name="SUPPLIER_NAM" type="xs:string" />
+              <xs:element minOccurs="0" name="INN_SUPPLIER" type="xs:unsignedLong" />
+              <xs:element minOccurs="0" name="COUNTRY_RU_NAM" type="xs:string" />
+              <xs:element minOccurs="0" name="PRODUCT_NAM" type="xs:string" />
+              <xs:element minOccurs="0" name="FULLCOST_AMT" type="xs:decimal" />
+              <xs:element minOccurs="0" name="FINANCE_AMT" type="xs:decimal" />
+              <xs:element minOccurs="0" name="PREPAY_RATE" type="xs:decimal" />
+              <xs:element minOccurs="0" name="PREPAY_AMT" type="xs:decimal" />
+              <xs:element minOccurs="0" name="OFFER_RATE" type="xs:string" />
+              <xs:element minOccurs="0" name="LEASE_TERM" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="COMISSION_AMT" type="xs:decimal" />
+              <xs:element minOccurs="0" name="COMISSION_RATE" type="xs:decimal" />
+              <xs:element minOccurs="0" name="REDEMPTION_AMT" type="xs:decimal" />
+              <xs:element minOccurs="0" name="PAYMENT_TYPE_NAM" type="xs:string" />
+              <xs:element minOccurs="0" name="CURRENCY_LEAS_SUBJECT" type="xs:string" />
+              <xs:element minOccurs="0" name="CONVERT_RATE" type="xs:decimal" />
+              <xs:element minOccurs="0" name="SUBSIDY_FLG" type="xs:boolean" />
+              <xs:element minOccurs="0" name="TESTDRIVE_FLG" type="xs:boolean" />
+              <xs:element minOccurs="0" name="ADVANCE_PERCENT" type="xs:decimal" />
+              <xs:element minOccurs="0" name="LIQUIDITY_GROUP" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="PLAN_AMT" type="xs:decimal" />
+              <xs:element minOccurs="0" name="KASKO_CRM_CLIENT_NAM" type="xs:string" />
+              <xs:element minOccurs="0" name="INN_LEASEHOLDER" type="xs:unsignedLong" />
+              <xs:element minOccurs="0" name="NAM_LEASEHOLDER" type="xs:string" />
+              <xs:element minOccurs="0" name="OKVED_CODE" type="xs:decimal" />
+              <xs:element minOccurs="0" name="APPROVAL_ROUTE" type="xs:string" />
+              <xs:element minOccurs="0" name="APPROVAL_RESULT" type="xs:string" />
+              <xs:element minOccurs="0" name="REHIRING_FLG" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
